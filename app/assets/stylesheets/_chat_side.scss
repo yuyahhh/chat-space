@@ -1,0 +1,30 @@
+.chat-side{
+  background-color: #253141;
+  width: 300px;
+  height: 100vh;
+  float: left;
+  .side-header{
+    height: 100px;
+    display:flex;
+    // justify-content: space-between;
+    .top-items{
+      // align-items: center;
+      display: flex;
+      justify-content: space-between;
+      height: 20px;
+      width:260px;
+      background-color: red;
+      margin: auto;
+      &__name{
+        width: 200px;
+        height: 100%;
+      }
+    }
+  }
+
+}
+
+.side-groups{
+  height: calc(100vh - 100px);
+  background-color: #2f3e51;
+}
