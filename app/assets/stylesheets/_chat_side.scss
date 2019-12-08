@@ -3,10 +3,10 @@
   width: 300px;
   height: 100vh;
   float: left;
-  .side-header{
+  &__header{
     height: 100px;
     display:flex;
-    .top-items{
+    &__top-items{
       margin: auto;
       display: flex;
       height: 20px;
@@ -32,31 +32,29 @@
         .new-group{
           text-decoration: none;
           margin-right: 5px;
-          .icon--edit{
+          .icon-edit{
             color: white;
           }
         }
-        .icon--cog{
+        .icon-cog{
           color: white;
         }
       }
     }
   }
-
-}
-
-.side-groups{
-  height: calc(100vh - 100px);
-  background-color: #2f3e51;
-  padding: 20px;
-  color: white;
-  .group-name{
-    margin-bottom: 5px;
-    font-size: 15px;
+  &__groups{
+    height: calc(100vh - 100px);
+    background-color: #2f3e51;
+    padding: 20px;
+    color: white;
+    &__group__name{
+      margin-bottom: 5px;
+      font-size: 15px;
+    }
+    &__group__message{
+      font-size: 11px;
+      margin-bottom: 40px;
+    }
+  
   }
-  .group-message{
-    font-size: 11px;
-    margin-bottom: 40px;
-  }
-
 }

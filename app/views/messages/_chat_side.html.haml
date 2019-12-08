@@ -1,20 +1,20 @@
 .chat-side
-  .side-header
-    .top-items
-      .top-items__name
+  .chat-side__header
+    .chat-side__header__top-items
+      .chat-side__header__top-items__name
         %p ABCD
-      .top-items__icons
+      .chat-side__header__top-items__icons
         =link_to "#", class: "new-group" do
-          = icon('fa', 'edit', class: "icon--edit")
-        =link_to "#", class: "edit-user" do
-          = icon('fa', 'cog', class: "icon--cog")
-  .side-groups
-    .groups
-      .group-name
+          = icon('fa', 'edit', class: "icon-edit")
+        =link_to "#", class: "edit--user" do
+          = icon('fa', 'cog', class: "icon-cog")
+  .chat-side__groups
+    .chat-side__groups__group
+      .chat-side__groups__group__name
         %p techcamp
-      .group-message
+      .chat-side__groups__group__message
         %p まだメッセージがありません
-      .group-name
+      .chat-side__groups__group__name
         %p techcamp
-      .group-message
+      .chat-side__groups__group__message
         %p まだメッセージがありません
