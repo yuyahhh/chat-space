@@ -1,6 +1,12 @@
 .chat-main
   .chat-main__header
     .chat-main__header__left-box
-      .chat-main__header__left-box
+      .chat-main__header__left-box__display-group
+        %p test
+      .chat-main__header__left-box__member-list
+        %p Member:ABCD
+    .chat-main__header__edit
+      =link_to "#", class: "chat-main__header__edit-btn" do
+        Edit
   .chat-main__message-list
   .chat-main__message-form

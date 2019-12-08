@@ -6,6 +6,33 @@
   &__header{
     height: 100px;
     background-color: #ffffff;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    &__left-box{
+      padding-top: 35px;
+      &__display-group{
+        color: #333333;
+        font-size: 20px;
+      }
+      &__member-list{
+        color: #999999;
+        font-size: 12px;
+        padding-top: 15px;
+      }
+    }
+      &__edit-btn{
+        margin-top: 28px;
+        line-height: 40px;
+        height: 40px;
+        text-decoration: none;
+        border: 1px solid #38aef0;
+        padding: 0 20px;
+        color: #38aef0;
+        position: absolute;
+        right: 40px;
+      }
   }
   &__message-list{
     height: calc(100vh - 190px);
