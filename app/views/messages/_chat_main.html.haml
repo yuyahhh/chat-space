@@ -1,0 +1,37 @@
+.chat-main
+  .chat-main__header
+    .chat-main__header__left-box
+      .chat-main__header__left-box__display-group
+        %p test
+      .chat-main__header__left-box__member-list
+        %p Member:ABCD
+    .chat-main__header__edit
+      =link_to "#", class: "chat-main__header__edit-btn" do
+        Edit
+
+  .chat-main__messages
+    .chat-main__messages__message
+      .chat-main__messages__message__upper-info
+        .chat-main__messages__message__upper-info__name
+          %p yuya
+        .chat-main__messages__message__upper-info__date
+          %p 2019/11/12(Wed) 17:24:09
+      .chat-main__messages__message__text
+        %p おはよう！
+    .chat-main__messages__message
+      .chat-main__messages__message__upper-info
+        .chat-main__messages__message__upper-info__name
+          %p yuya
+        .chat-main__messages__message__upper-info__date
+          %p 2019/11/12(Wed) 17:24:09
+      .chat-main__messages__message__text
+        %p おはよう！
+
+  .chat-main__form
+    %form.chat-main__form__new-message
+      .chat-main__form__new-message__input-box
+        %input.chat-main__form__new-message__input-box__text{placeholder: "type a message", type: "text"}
+        %label{class: "chat-main__form__new-message__input-box__image"}
+          = icon('far', 'image', class: "icon-image")
+          %input{type: "file", class: "icon-file"}
+      %input.chat-main__form__new-message__submit-btn{type: "submit", value: "Send"}
