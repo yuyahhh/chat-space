@@ -30,8 +30,8 @@
   .chat-main__form
     %form.chat-main__form__new-message
       .chat-main__form__new-message__input-box
-        %input.chat-main__form__new-message__input-box__text{:placeholder => "type a message", :type => "text"}
+        %input.chat-main__form__new-message__input-box__text{placeholder: "type a message", type: "text"}
         %label{class: "chat-main__form__new-message__input-box__image"}
           = icon('far', 'image', class: "icon-image")
           %input{type: "file", class: "icon-file"}
-      %input.chat-main__form__new-message__submit-btn{:type => "submit", :value => "Send"}
+      %input.chat-main__form__new-message__submit-btn{type: "submit", value: "Send"}
