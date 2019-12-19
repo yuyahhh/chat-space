@@ -1,3 +1,7 @@
+a{
+  text-decoration: none;
+  color: white;
+}
 .chat-side{
   background-color: #253141;
   width: 300px;
@@ -19,7 +23,7 @@
         position: absolute;
         left: 0;
         line-height: 20px;
-        color: white;
+        // color: white;
         font-size: 16px;
       }
       &__icons{
@@ -33,11 +37,11 @@
           text-decoration: none;
           margin-right: 5px;
           .icon-edit{
-            color: white;
+            // color: white;
           }
         }
         .icon-cog{
-          color: white;
+          // color: white;
         }
       }
     }
@@ -47,12 +51,13 @@
     height: calc(100vh - 100px);
     background-color: #2f3e51;
     padding: 20px;
-    color: white;
     &__group__name{
+      // color: white;
       margin-bottom: 5px;
       font-size: 15px;
     }
     &__group__message{
+      // color: white;
       font-size: 11px;
       margin-bottom: 40px;
     }
