@@ -2,16 +2,16 @@
   .chat-main__header
     .chat-main__header__left-box
       .chat-main__header__left-box__display-group
-        %p test
+        = @group.name
       .chat-main__header__left-box__member-list
-        %p Member:ABCD
+        %P Member :
+        .chat-main__header__left-box__member-list__menber
+          - current_user.groups.each do |group|
+            = @group.users.name
     .chat-main__header__edit
-      =link_to "#", class: "chat-main__header__edit-btn" do
-        Edit
-
+      =link_to "Edit", edit_group_path(@group), class: "chat-main__header__edit-btn" 
   .chat-main__messages
     = render partial: 'message', collection: @messages
-
   .chat-main__form
     = form_for [@group, @message], html: {class: 'chat-main__form__new-message'} do |f|
       .chat-main__form__new-message__input-box
@@ -20,12 +20,3 @@
           = icon('fas', 'image', class: 'icon-image')
           = f.file_field :image, class: 'icon-file'
       = f.submit 'Send', class: 'chat-main__form__new-message__submit-btn'
-
-  -# .chat-main__form
-  -#   %form.chat-main__form__new-message
-  -#     .chat-main__form__new-message__input-box
-  -#       %input.chat-main__form__new-message__input-box__text{placeholder: "type a message", type: "text"}
-  -#       %label{class: "chat-main__form__new-message__input-box__image"}
-  -#         = icon('far', 'image', class: "icon-image")
-  -#         %input{type: "file", class: "icon-file"}
-  -#     %input.chat-main__form__new-message__submit-btn{type: "submit", value: "Send"}
