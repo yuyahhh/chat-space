@@ -23,7 +23,7 @@ a{
         position: absolute;
         left: 0;
         line-height: 20px;
-        // color: white;
+        color: white;
         font-size: 16px;
       }
       &__icons{
@@ -51,6 +51,7 @@ a{
     height: calc(100vh - 100px);
     background-color: #2f3e51;
     padding: 20px;
+    overflow: scroll;
     &__group__name{
       // color: white;
       margin-bottom: 5px;
