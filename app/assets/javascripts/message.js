@@ -39,18 +39,45 @@ $(function(){
      return html;
     };
   }
-$('#new_message').on('submit', function(e){
-  e.preventDefault();
-  var formData = new FormData(this);
-  var url = $(this).attr('action')
-  $.ajax({
-    url: url,
-    type: "POST",
-    data: formData,
-    dataType: 'json',
-    processData: false,
-    contentType: false
-  })
+
+  var reloadMessages = function() {
+    last_message_id = $('.chat-main__messages__message').last().data("message-id");
+    
+    $.ajax({
+      url: "api/messages",
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      if (messages.length !== 0) {
+        var insertHTML = '';
+        $.each(messages, function(i, message) {
+          insertHTML += buildHTML(message)
+        });
+        $('.chat-main__messages').append(insertHTML);
+        $('.chat-main__messages').animate({ scrollTop: $('.chat-main__messages')[0].scrollHeight});
+        $("#new_message")[0].reset();
+        $(".chat-main__form__new-message__submit-btn").prop("disabled", false);
+      }
+    })
+    .fail(function() {
+      alert('自動更新に失敗しました');
+    });
+  };
+
+  $('#new_message').on('submit', function(e){
+    e.preventDefault();
+    var formData = new FormData(this);
+    var url = $(this).attr('action')
+    $.ajax({
+      url: url,
+      type: "POST",
+      data: formData,
+      dataType: 'json',
+      processData: false,
+      contentType: false
+    })
    .done(function(data){
      var html = buildHTML(data);
      $('.chat-main__messages').append(html);
@@ -59,7 +86,10 @@ $('#new_message').on('submit', function(e){
      $('.chat-main__form__new-message__submit-btn').prop('disabled', false);
    })
    .fail(function() {
-    alert("メッセージ送信に失敗しました");
+      alert("メッセージ送信に失敗しました");
    });
-})
+  })
+  if (document.location.href.match(/\/groups\/\d+\/messages/)) {
+    setInterval(reloadMessages, 7000);
+  }
 });
